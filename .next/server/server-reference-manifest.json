@@ -1,33 +1,29 @@
 {
   "node": {
-    "4006fdd0a80d621ce4cc4ed546dba4799dfc2ee07b": {
+    "40534664dedefbb8f846ab988deb1141c3f68bd69b": {
       "workers": {
         "app/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/dashboard/layout.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/dashboard/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "default",
-          "filename": "src/app/dashboard/layout.tsx"
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Clayout.tsx%22%2C%5B%7B%22id%22%3A%2240534664dedefbb8f846ab988deb1141c3f68bd69b%22%2C%22exportedName%22%3A%22default%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Clayout.tsx%22%7D%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%2C%5B%7B%22id%22%3A%2200a7e636eb7a4f34f53196a4d8aa5610816f846b74%22%2C%22exportedName%22%3A%22default%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/dashboard/page": "rsc"
       },
-      "filename": "src/app/dashboard/layout.tsx",
+      "filename": "../C:\\Users\\Pc\\Documents\\WebPersonal\\WebWindsurf\\src\\app\\dashboard\\layout.tsx",
       "exportedName": "default"
     },
-    "0078ee70576553f7f6909656d62aaa967cefd93916": {
+    "00a7e636eb7a4f34f53196a4d8aa5610816f846b74": {
       "workers": {
         "app/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/app/dashboard/layout.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/dashboard/page.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "default",
-          "filename": "src/app/dashboard/page.tsx"
+          "moduleId": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Clayout.tsx%22%2C%5B%7B%22id%22%3A%2240534664dedefbb8f846ab988deb1141c3f68bd69b%22%2C%22exportedName%22%3A%22default%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Clayout.tsx%22%7D%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%2C%5B%7B%22id%22%3A%2200a7e636eb7a4f34f53196a4d8aa5610816f846b74%22%2C%22exportedName%22%3A%22default%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5CPc%5C%5CDocuments%5C%5CWebPersonal%5C%5CWebWindsurf%5C%5Csrc%5C%5Capp%5C%5Cdashboard%5C%5Cpage.tsx%22%7D%5D%5D%5D&__client_imported__=!",
+          "async": false
         }
       },
       "layer": {
         "app/dashboard/page": "rsc"
       },
-      "filename": "src/app/dashboard/page.tsx",
+      "filename": "../C:\\Users\\Pc\\Documents\\WebPersonal\\WebWindsurf\\src\\app\\dashboard\\page.tsx",
       "exportedName": "default"
     }
   },

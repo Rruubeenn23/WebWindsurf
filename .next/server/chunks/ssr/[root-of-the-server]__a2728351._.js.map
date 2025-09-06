@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 11, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Pc/Documents/WebPersonal/WebWindsurf/src/app/page.tsx"],"sourcesContent":["export default function Home() {\n  return (\n    <main className=\"flex min-h-screen flex-col items-center justify-between p-24\">\n      <h1 className=\"text-4xl font-bold\">Welcome to FitFuel</h1>\n      <p className=\"text-lg\">Your fitness and nutrition tracking app</p>\n    </main>\n  );\n}\n"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,8OAAC;QAAK,WAAU;;0BACd,8OAAC;gBAAG,WAAU;0BAAqB;;;;;;0BACnC,8OAAC;gBAAE,WAAU;0BAAU;;;;;;;;;;;;AAG7B","debugId":null}}]
-}

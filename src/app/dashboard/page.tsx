@@ -9,19 +9,39 @@ import Link from "next/link"
 
 export default async function DashboardPage() {
   const supabase = createClient()
-  const { data: { session } } = await supabase.auth.getSession()
+  const { data, error } = await supabase.auth.getSession()
   
-  // if (!session) {
+  console.log('Dashboard Page - Session Data:', data)
+  console.log('Dashboard Page - Session Error:', error)
+  
+  // Temporarily disabled for debugging
+  // if (!data?.session?.user) {
+  //   console.log('No user session found, redirecting to login')
   //   redirect("/login")
   //   return null
   // }
 
-  // Get user data
-  const { data: userData } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', session.user.id)
-    .single()
+  let userData = null
+  
+  try {
+    if (data?.session?.user?.id) {
+      const { data: profileData, error: profileError } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', data.session.user.id)
+        .single()
+      
+      if (profileError) {
+        console.error('Error fetching user profile:', profileError)
+      } else {
+        userData = profileData
+      }
+    } else {
+      console.log('No user ID found in session')
+    }
+  } catch (err) {
+    console.error('Error in dashboard page:', err)
+  }
 
   return (
     <div className="flex-1 space-y-4 p-8 pt-6">

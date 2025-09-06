@@ -34,8 +34,8 @@ export default function LoginPage() {
         
         if (session?.user) {
           console.log('User session found, redirecting to dashboard')
-          router.push('/dashboard')
-          router.refresh()
+          // Use window.location for a full page refresh to ensure session is loaded
+          window.location.href = '/dashboard'
           return
         }
       } catch (error) {
@@ -66,10 +66,13 @@ export default function LoginPage() {
       })
 
       if (error) {
-        throw error
+        console.error('Login error:', error)
+        setError(error.message || 'An error occurred during login')
+        return
       }
       
       if (data.session) {
+        console.log('Login successful, redirecting to dashboard')
         // Force a full page reload to ensure all session data is loaded
         window.location.href = '/dashboard'
       } else {
