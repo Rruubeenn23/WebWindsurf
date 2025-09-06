@@ -19,3 +19,8 @@ pnpm-debug.log*
 .vercel/
 coverage/
 .DS_Store
+node_modules/
+.next/
+dist/
+out/
+
