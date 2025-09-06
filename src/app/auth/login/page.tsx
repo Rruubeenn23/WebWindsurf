@@ -22,6 +22,7 @@ export default function LoginPage() {
   useEffect(() => {
     const checkSession = async () => {
       try {
+        setIsLoading(true)
         const { data: { session }, error } = await supabase.auth.getSession()
         
         if (error) {
@@ -29,8 +30,12 @@ export default function LoginPage() {
           return
         }
         
-        if (session) {
+        console.log('Login page session check:', { session, error })
+        
+        if (session?.user) {
+          console.log('User session found, redirecting to dashboard')
           router.push('/dashboard')
+          router.refresh()
           return
         }
       } catch (error) {
@@ -45,6 +50,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setError(null)
     
     if (!email || !password) {
       setError('Please fill in all fields')
@@ -52,8 +58,7 @@ export default function LoginPage() {
     }
     
     setIsSubmitting(true)
-    setError(null)
-
+    
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim(),

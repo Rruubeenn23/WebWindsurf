@@ -16,12 +16,15 @@ export default async function DashboardLayout({
   children: React.ReactNode
 }) {
   const supabase = createClient()
-  const { data: { session } } = await supabase.auth.getSession()
+  const { data: { session }, error } = await supabase.auth.getSession()
   
-  if (!session) {
-    redirect("/login")
-    return null
-  }
+  console.log('Session in layout:', { session, error })
+  
+  // Temporarily disabled for debugging
+  // if (!session) {
+  //   redirect("/login")
+  //   return null
+  // }
 
   return (
     <div className="flex min-h-screen flex-col">
