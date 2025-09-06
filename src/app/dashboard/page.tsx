@@ -1,54 +1,32 @@
-"use client"
+"use server"
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import { createClient } from "@/lib/supabase/client"
+import { redirect } from "next/navigation"
+import { createClient } from "@/lib/supabase/server"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
 import Link from "next/link"
 
-export default function DashboardPage() {
-  const [session, setSession] = useState<any>(null)
-  const [profile, setProfile] = useState<any>(null)
-  const [loading, setLoading] = useState(true)
-  const router = useRouter()
+export default async function DashboardPage() {
   const supabase = createClient()
+  const { data: { session } } = await supabase.auth.getSession()
+  
+  // if (!session) {
+  //   redirect("/login")
+  //   return null
+  // }
 
-  useEffect(() => {
-    const getSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
-      if (!session) {
-        router.push("/auth/login")
-        return
-      }
-      setSession(session)
-
-      // Fetch profile data
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", session.user.id)
-        .single()
-      
-      setProfile(profile)
-      setLoading(false)
-    }
-
-    getSession()
-  }, [router, supabase])
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <Icons.logo className="h-8 w-8 animate-spin" />
-      </div>
-    )
-  }
+  // Get user data
+  const { data: userData } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', session.user.id)
+    .single()
 
   return (
     <div className="flex-1 space-y-4 p-8 pt-6">
       <div className="flex items-center justify-between space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">Welcome back, {profile?.full_name || 'User'}</h2>
+        <h2 className="text-3xl font-bold tracking-tight">Welcome back, {userData?.full_name || 'User'}</h2>
         <div className="flex items-center space-x-2">
           <Button asChild>
             <Link href="/nutrition/add">
@@ -64,8 +42,23 @@ export default function DashboardPage() {
           </Button>
         </div>
       </div>
-      
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">
+              Your Stats
+            </CardTitle>
+            <Icons.logo className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold">Coming Soon</div>
+            <p className="text-xs text-muted-foreground">
+              Your fitness stats will appear here
+            </p>
+          </CardContent>
+        </Card>
+        
         {/* Calories Card */}
         <div className="rounded-xl border bg-card text-card-foreground shadow">
           <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">

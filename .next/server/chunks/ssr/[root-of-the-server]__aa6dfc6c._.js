@@ -199,12 +199,14 @@ module.exports = mod;
 "use strict";
 
 __turbopack_context__.s([
+    "createClient",
+    ()=>createClient,
     "createServerSupabaseClient",
     ()=>createServerSupabaseClient
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@supabase/supabase-js/dist/module/index.js [app-rsc] (ecmascript) <locals>");
 ;
-function createServerSupabaseClient() {
+function createClient() {
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$supabase$2f$supabase$2d$js$2f$dist$2f$module$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createClient"])(("TURBOPACK compile-time value", "https://tyvdibofmodhzhngmoab.supabase.co"), ("TURBOPACK compile-time value", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR5dmRpYm9mbW9kaHpobmdtb2FiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTcxMDIxMjEsImV4cCI6MjA3MjY3ODEyMX0.XKEbrhlHK6RQPlFy7N79tA7qDvCFY_S1KaCewyZbrsc"), {
         auth: {
             persistSession: true,
@@ -217,6 +219,9 @@ function createServerSupabaseClient() {
             }
         }
     });
+}
+function createServerSupabaseClient() {
+    return createClient();
 }
 }),
 "[project]/src/app/login/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {

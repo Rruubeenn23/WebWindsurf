@@ -141,4 +141,50 @@ export default function LoginPage() {
                 />
               </div>
               <Button type="submit" className="w-full" disabled={isSubmitting}>
-                {isSubmitt
+                {isSubmitting ? (
+                  <Icons.sun className="mr-2 h-4 w-4 animate-spin" />
+                ) : null}
+                Sign In
+              </Button>
+            </form>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">
+                  Or continue with
+                </span>
+              </div>
+            </div>
+
+            <Button 
+              variant="outline" 
+              type="button" 
+              className="w-full" 
+              disabled={isSubmitting}
+              onClick={() => {
+                // TODO: Implement Google OAuth
+                setError('Google sign in is not yet implemented')
+              }}
+            >
+              <Icons.plus className="mr-2 h-4 w-4" />
+              Continue with Email
+            </Button>
+
+            <p className="px-8 text-center text-sm text-muted-foreground">
+              Don't have an account?{' '}
+              <Link
+                href="/signup"
+                className="underline underline-offset-4 hover:text-primary"
+              >
+                Sign up
+              </Link>
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
